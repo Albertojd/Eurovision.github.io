@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados Eurovisión</title>
+</head>
+<body>
+    <h1>Resultados Eurovisión</h1>
+    <table>
+        <tr>
+            <th>País</th>
+            <th>Puntuación</th>
+            <th>Descripción</th>
+        </tr>
+        {% for vote in votes %}
+            {% for country in countries %}
+                {% if country['name'] == vote['country'] %}
+                    <tr>
+                        <td>{{ vote['country'] }}</td>
+                        <td>{{ vote['score'] }}</td>
+                        <td>{{ vote['description'] }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </table>
+    <form action="{{ url_for('download_csv') }}" method="post">
+        <input type="submit" value="Descargar CSV">
+    </form>
+</body>
+</html>
