@@ -5,11 +5,23 @@ from flask import Flask, render_template, request, redirect, url_for, Response
 
 app = Flask(__name__)
 
-countries = [
-    {"name": "Noruega", "song": "Queen of kings", "artist": "Alessandra"},
-    {"name": "Malta", "song": "Dance (our own party)", "artist": "The Busker"},
-    {"name": "Serbia", "song": "Samo mí se spava", "artist": "Luke Black"},
-    {"name": "Letonia", "song": "Sudden lights", "artist": "Sudden Lights"}
+countries = countries = [
+    {"name": "Dinamarca", "song": "Breaking My Heart", "artist": "Reiley"},
+    {"name": "Armenia", "song": "Future Lover", "artist": "Brunette"},
+    {"name": "Rumania", "song": "D.G.T. (Off and On)", "artist": "Theodor Andrei"},
+    {"name": "Estonia", "song": "Bridges", "artist": "Alika"},
+    {"name": "Bélgica", "song": "Because Of You", "artist": "Gustaph"},
+    {"name": "Chipre", "song": "Break A Broken Heart", "artist": "Andrew Lambrou"},
+    {"name": "Islandia", "song": "Power", "artist": "Diljá"},
+    {"name": "Grecia", "song": "What They Say", "artist": "Victor Vernicos"},
+    {"name": "Polonia", "song": "Solo", "artist": "Blanka"},
+    {"name": "Eslovenia", "song": "Carpe Diem", "artist": "Joker Out"},
+    {"name": "Georgia", "song": "Echo", "artist": "Iru"},
+    {"name": "San Marino", "song": "Like An Animal", "artist": "Piqued Jacks"},
+    {"name": "Austria", "song": "Who The Hell Is Edgar?", "artist": "Teya & Salena"},
+    {"name": "Albania", "song": "Duje", "artist": "Albina & Familja Kelmendi"},
+    {"name": "Lituania", "song": "Stay", "artist": "Monika Linkytė"},
+    {"name": "Australia", "song": "Promise", "artist": "Voyager"}
 ]
 
 @app.route('/', methods=['GET', 'POST'])
