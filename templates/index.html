@@ -3,6 +3,7 @@
 <head>
     <title>Votación Eurovisión</title>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
     <h1>Votación Eurovisión</h1>
     <form method="POST" action="/">
@@ -12,10 +13,11 @@
             <input type="number" id="{{ country['name'] }}_score" name="{{ country['name'] }}_score" min="1" max="10" step="0.1" required><br><br>
 
             <label for="{{ country['name'] }}_description">Descripción:</label>
-            <input type="text" id="{{ country['name'] }}_description" name="{{ country['name'] }}_description"><br><br>
+            <textarea id="{{ country['name'] }}_description" name="{{ country['name'] }}_description" rows="4" cols="50"></textarea><br><br>
         {% endfor %}
         
         <input type="submit" value="Enviar votos">
     </form>
 </body>
 </html>
+
