@@ -49,5 +49,11 @@ td {
 .input-description {
     width: 100%;
 }
+.description-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
 
 /* Agrega más estilos según tus necesidades */
