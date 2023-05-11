@@ -3,7 +3,8 @@ import csv
 import io
 from flask import Flask, render_template, request, redirect, url_for, Response
 
-app = Flask(__name__)
+
+app = Flask(__name__, static_url_path='/static')
 
 countries = countries = [
     {"name": "Dinamarca", "song": "Breaking My Heart", "artist": "Reiley"},
@@ -23,6 +24,26 @@ countries = countries = [
     {"name": "Lituania", "song": "Stay", "artist": "Monika Linkytė"},
     {"name": "Australia", "song": "Promise", "artist": "Voyager"}
 ]
+def get_country_code(country_name):
+    code_mappings = {
+        "Dinamarca": "dk",
+        "Armenia": "am",
+        "Rumania": "ro",
+        "Estonia": "ee",
+        "Bélgica": "be",
+        "Chipre": "cy",
+        "Islandia": "is",
+        "Grecia": "gr",
+        "Polonia": "pl",
+        "Eslovenia": "si",
+        "Georgia": "ge",
+        "San Marino": "sm",
+        "Austria": "at",
+        "Albania": "al",
+        "Lituania": "lt",
+        "Australia": "au"
+    }
+    return code_mappings.get(country_name, "")
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -34,7 +55,8 @@ def index():
             description = request.form[country_name + '_description']
             votes.append({'country': country_name, 'score': score, 'description': description})
         return redirect(url_for('results', votes=json.dumps(votes)))
-    return render_template('index.html', countries=countries)
+    return render_template('index.html', countries=countries, get_country_code=get_country_code)
+
 
 @app.route('/results')
 def results():
