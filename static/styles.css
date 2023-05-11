@@ -1,0 +1,59 @@
+/* Estilos para la temática del Reino Unido */
+body.uk-theme {
+    background-color: #00247d;
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+}
+
+form {
+    background-color: #fff;
+    color: #00247d;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #cf142b;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #a80020;
+}
+
+table {
+    background-color: #fff;
+    color: #00247d;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background-color: #cf142b;
+    color: #fff;
+    padding: 8px;
+}
+
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+.input-description {
+    width: 100%;
+}
+.description-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* Agrega más estilos según tus necesidades */
